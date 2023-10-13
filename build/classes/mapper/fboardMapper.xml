@@ -5,9 +5,24 @@
   <mapper namespace="fb">
   	<insert id="add" parameterType="dto.FboardDTO">
 	  	insert into fboard 
-	  		values(fboard_seq.nextval, #{subject}, #{writer}, #{content}, #{reip}, sysdate)
+	  		values(fboard_seq.nextval, #{subject}, #{writer}, #{content}, #{reip}, sysdate, 0)
   	</insert>
   	<select id="list" resultType="dto.FboardDTO">
-  		select * from fboard order by 1 desc
+  		select * from fboard order by 1 desc <!-- resultType 값 받아오는거 -->
   	</select>
+  	<select id="detail" parameterType="int" resultType="dto.FboardDTO">
+  		select * from fboard where num=#{num}
+  	</select>
+  	
+  	<update id="hit" parameterType="int"> <!-- 조회수 업데이트 -->
+  		update fboard set hit=hit+1 where num=#{num} <!-- parameterType : 바인딩 변수로 넘길 값 => sql로 보낼값 -->
+  	</update>
+  	
+  	<delete id="del" parameterType="int">
+  		delete from fboard where num=#{num}
+  	</delete>
+  	<!-- fdate, hit 제외 -->
+  	<update id="update" parameterType="vo.FBoardVO">
+  		update fboard set subject=#{subject}, writer=#{writer}, content=#{content}, reip=#{reip} where num=#{num}
+  	</update>
   </mapper>

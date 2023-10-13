@@ -17,7 +17,6 @@ public class FactoryService {
 			factory = new SqlSessionFactoryBuilder().build(reader);
 			
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

@@ -7,6 +7,7 @@ public class FboardDTO {
 	private String content;
 	private String reip;
 	private String fdate;
+	private int hit;
 	
 	public FboardDTO() {
 	}
@@ -46,6 +47,14 @@ public class FboardDTO {
 	}
 	public void setFdate(String fdate) {
 		this.fdate = fdate;
+	}
+
+	public int getHit() {
+		return hit;
+	}
+
+	public void setHit(int hit) {
+		this.hit = hit;
 	}
 	
 }
