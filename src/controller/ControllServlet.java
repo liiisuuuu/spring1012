@@ -31,7 +31,7 @@ public class ControllServlet extends HttpServlet { // 상속
 		
 		// pro.ict?cmd=fboard
 		String cmd = request.getParameter("cmd");
-		Action action = null;
+		Action action = null; 
 		
 		if (cmd != null) { // 요청된 화면이 있다면
 			ActionFactory factory = ActionFactory.getFactory(); // Factory 객체 한번만 생성 : 싱글톤 한거 불러옴

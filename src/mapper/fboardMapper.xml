@@ -22,7 +22,7 @@
   		delete from fboard where num=#{num}
   	</delete>
   	<!-- fdate, hit 제외 -->
-  	<update id="update" parameterType="vo.FBoardVO">
+  	<update id="update" parameterType="dto.FboardDTO">
   		update fboard set subject=#{subject}, writer=#{writer}, content=#{content}, reip=#{reip} where num=#{num}
   	</update>
   </mapper>
